@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SynchNeuro Help — FAQ &amp; Troubleshooting</title>
+<style>
+  :root { --blue:#003F7D; --ink:#1f2933; --muted:#6b7280; --line:#e5e7eb; --bg:#f7f9fc; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         color:var(--ink); background:#fff; line-height:1.55; -webkit-text-size-adjust:100%; }
+  header { background:var(--blue); color:#fff; padding:18px 16px; position:sticky; top:0; z-index:5; }
+  header h1 { margin:0; font-size:20px; font-weight:700; }
+  header p { margin:4px 0 0; font-size:13px; opacity:.85; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 16px 48px; }
+  .searchbar { position:sticky; top:60px; z-index:4; background:#fff; padding:12px 0 6px; }
+  .searchbar input { width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
+                     border-radius:12px; background:var(--bg); }
+  .tools { display:flex; justify-content:flex-end; padding:4px 0 8px; }
+  .tools button { background:none; border:none; color:var(--blue); font-size:13px; cursor:pointer; }
+  h2.section { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
+               margin:26px 0 8px; font-weight:700; }
+  .qa { border-bottom:1px solid var(--line); }
+  .qa .q { width:100%; text-align:left; background:none; border:none; padding:14px 0; cursor:pointer;
+           font-size:16px; font-weight:600; color:var(--ink); display:flex; gap:12px;
+           align-items:flex-start; justify-content:space-between; }
+  .qa .chev { color:var(--blue); font-size:20px; line-height:1; flex:0 0 auto; }
+  .qa.open .chev { transform:rotate(45deg); }
+  .qa .a { display:none; padding:0 0 16px; }
+  .qa.open .a { display:block; }
+  .qa .a p { margin:0 0 12px; }
+  .qa .a ul { margin:0 0 12px; padding-left:20px; }
+  .qa .a li { margin:4px 0; }
+  .qa .a img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; margin:6px 0; }
+  .warn { background:#fff7ed; border-left:4px solid #f59e0b; padding:10px 12px; border-radius:6px; margin:10px 0; }
+  .intro { color:var(--muted); margin:4px 0 8px; }
+  .nores { color:var(--muted); padding:24px 0; display:none; }
+</style>
+</head>
+<body>
+<header><h1>SynchNeuro Help</h1><p>FAQ &amp; Troubleshooting</p></header>
+<div class="wrap">
+  <div class="searchbar"><input id="q" type="search" placeholder="Search help articles…" aria-label="Search"></div>
+  <div class="tools"><button id="toggleAll" type="button">Expand all</button></div>
+  <div id="content">
+<ul class="index"><li><a href="stelo-cgm.html">Stelo CGM</a></li><li><a href="polar-verity-sense.html">Polar Verity Sense</a></li><li><a href="eeg-sensor.html">EEG Sensor</a></li></ul>
+  </div>
+  <p class="nores" id="nores">No results found.</p>
+</div>
+<script>
+  var content = document.getElementById('content');
+  var items = Array.prototype.slice.call(content.querySelectorAll('.qa'));
+  var search = document.getElementById('q');
+  var nores = document.getElementById('nores');
+  var toggleAll = document.getElementById('toggleAll');
+
+  content.addEventListener('click', function (e) {
+    var btn = e.target.closest('.q'); if (!btn) return;
+    var qa = btn.parentElement;
+    var open = qa.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  toggleAll.addEventListener('click', function () {
+    var anyClosed = items.some(function (i) { return !i.classList.contains('open') && i.style.display !== 'none'; });
+    items.forEach(function (i) {
+      if (i.style.display === 'none') return;
+      i.classList.toggle('open', anyClosed);
+      i.querySelector('.q').setAttribute('aria-expanded', anyClosed ? 'true' : 'false');
+    });
+    toggleAll.textContent = anyClosed ? 'Collapse all' : 'Expand all';
+  });
+
+  search.addEventListener('input', function () {
+    var term = search.value.trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function (i) {
+      var match = !term || i.textContent.toLowerCase().indexOf(term) !== -1;
+      i.style.display = match ? '' : 'none';
+      if (match && term) { i.classList.add('open'); i.querySelector('.q').setAttribute('aria-expanded', 'true'); }
+      if (match) shown++;
+    });
+    // hide section headers with no visible items
+    Array.prototype.slice.call(content.querySelectorAll('h2.section')).forEach(function (h) {
+      var any = false, n = h.nextElementSibling;
+      while (n && !(n.tagName === 'H2')) { if (n.classList.contains('qa') && n.style.display !== 'none') any = true; n = n.nextElementSibling; }
+      h.style.display = (term && !any) ? 'none' : '';
+    });
+    nores.style.display = (term && shown === 0) ? 'block' : 'none';
+  });
+</script>
+</body>
+</html>

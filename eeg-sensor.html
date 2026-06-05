@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EEG Sensor — FAQ &amp; Troubleshooting</title>
+<style>
+  :root { --blue:#003F7D; --ink:#1f2933; --muted:#6b7280; --line:#e5e7eb; --bg:#f7f9fc; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         color:var(--ink); background:#fff; line-height:1.55; -webkit-text-size-adjust:100%; }
+  header { background:var(--blue); color:#fff; padding:18px 16px; position:sticky; top:0; z-index:5; }
+  header h1 { margin:0; font-size:20px; font-weight:700; }
+  header p { margin:4px 0 0; font-size:13px; opacity:.85; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 16px 48px; }
+  .searchbar { position:sticky; top:60px; z-index:4; background:#fff; padding:12px 0 6px; }
+  .searchbar input { width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
+                     border-radius:12px; background:var(--bg); }
+  .tools { display:flex; justify-content:flex-end; padding:4px 0 8px; }
+  .tools button { background:none; border:none; color:var(--blue); font-size:13px; cursor:pointer; }
+  h2.section { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
+               margin:26px 0 8px; font-weight:700; }
+  .qa { border-bottom:1px solid var(--line); }
+  .qa .q { width:100%; text-align:left; background:none; border:none; padding:14px 0; cursor:pointer;
+           font-size:16px; font-weight:600; color:var(--ink); display:flex; gap:12px;
+           align-items:flex-start; justify-content:space-between; }
+  .qa .chev { color:var(--blue); font-size:20px; line-height:1; flex:0 0 auto; }
+  .qa.open .chev { transform:rotate(45deg); }
+  .qa .a { display:none; padding:0 0 16px; }
+  .qa.open .a { display:block; }
+  .qa .a p { margin:0 0 12px; }
+  .qa .a ul { margin:0 0 12px; padding-left:20px; }
+  .qa .a li { margin:4px 0; }
+  .qa .a img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; margin:6px 0; }
+  .warn { background:#fff7ed; border-left:4px solid #f59e0b; padding:10px 12px; border-radius:6px; margin:10px 0; }
+  .intro { color:var(--muted); margin:4px 0 8px; }
+  .nores { color:var(--muted); padding:24px 0; display:none; }
+</style>
+</head>
+<body>
+<header><h1>EEG Sensor</h1><p>FAQ &amp; Troubleshooting</p></header>
+<div class="wrap">
+  <div class="searchbar"><input id="q" type="search" placeholder="Search help articles…" aria-label="Search"></div>
+  <div class="tools"><button id="toggleAll" type="button">Expand all</button></div>
+  <div id="content">
+<h2 class="section">Frequently Asked Questions</h2>
+<h2 class="section">About the Device</h2>
+<div class="qa"><button class="q" aria-expanded="false"><span>What does this device do?</span><span class="chev">+</span></button><div class="a"><p>The SynchNeuro sensor records electrical brain activity (EEG) while you wear it. The data collected during this study will be used for research and development purposes. The app does not currently display EEG derived health insights — that feature is being developed for future versions.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>Where does the sensor go?</span><span class="chev">+</span></button><div class="a"><p>The sensor sits behind your left ear, resting on the hard bony bump directly behind your earlobe. It should hug the curve of your ear with the pointed tip facing away from your head.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>Is this a medical device that diagnoses conditions?</span><span class="chev">+</span></button><div class="a"><p>No. The SynchNeuro system is not intended to diagnose, treat, or manage any medical condition. It is a research-grade wearable used in this study purely to collect data for developmental purposes.</p></div></div>
+<h2 class="section">Wearing the Device</h2>
+<div class="qa"><button class="q" aria-expanded="false"><span>Do I need to wear it all the time?</span><span class="chev">+</span></button><div class="a"><p>Yes — for the best results during the 14-day study, please wear the device continuously, including during sleep. The sensor records automatically once applied, even if the app is closed.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>Can I shower or swim while wearing it?</span><span class="chev">+</span></button><div class="a"><p>No. You must remove the sensor pod from the patch electrode before showering, bathing, or swimming. Water will damage the device. The patch electrode can remain in place during showering or swimming.</p><div class="warn">⚠ Do NOT expose the sensor to water. Remove before showering, bathing, or swimming.</div></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>Can I wear earrings or glasses while wearing the sensor?</span><span class="chev">+</span></button><div class="a"><p>Remove earrings, glasses, and hats before applying the sensor. Once it is secured, you may put them back on, but be mindful not to disturb the patch placement.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>What if the skin behind my ear feels irritated?</span><span class="chev">+</span></button><div class="a"><p>Remove the sensor and patch immediately. Clean the area gently with mild soap and water. Do not reapply until the irritation has resolved, and submit a symptom report via the SynchNeuro app.</p></div></div>
+<h2 class="section">Charging &amp; Battery</h2>
+<div class="qa"><button class="q" aria-expanded="false"><span>How often do I need to charge the sensor?</span><span class="chev">+</span></button><div class="a"><p>Every day. Gently remove the sensor pod from behind your ear (without peeling off the adhesive patch), place it in the charging case, and connect it to the USB cable. A full charge takes up to 2 hours.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>How do I know it is charging?</span><span class="chev">+</span></button><div class="a"><p>The LED on the charging case will flash while charging. When charging is complete, the LED will stay solid (stops flashing).</p></div></div>
+<h2 class="section">The Adhesive Patch</h2>
+<div class="qa"><button class="q" aria-expanded="false"><span>How often do I need to replace the patch?</span><span class="chev">+</span></button><div class="a"><p>Every 7 days, or sooner if it starts to peel away from your skin. Never reuse a patch once it has been removed.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>What do I do if the patch stops sticking?</span><span class="chev">+</span></button><div class="a"><p>If the patch begins to detach, apply a new one as soon as possible. Contact the study team if you need replacement patches.</p></div></div>
+<h2 class="section">The App</h2>
+<div class="qa"><button class="q" aria-expanded="false"><span>Does the sensor keep recording if I close the app?</span><span class="chev">+</span></button><div class="a"><p>Yes, recording continues in the background. Your phone should stay within approximately 10 meters (33 feet) of the sensor for data to sync — staying within 4 meters is ideal.</p></div></div>
+<div class="qa"><button class="q" aria-expanded="false"><span>Will the app show me my data or health insights?</span><span class="chev">+</span></button><div class="a"><p>Not at this stage. The app is used to connect to and manage the device during this study. Data insights and analysis are planned for a future version of the SynchNeuro system.</p></div></div>
+<h2 class="section">Troubleshooting</h2>
+<h2 class="section">Connectivity Issues</h2>
+<div class="intro"><p><strong>The app cannot find my sensor.</strong></p></div>
+<div class="intro"><ul><li>Make sure the sensor is charged — place it in the case and confirm the LED lights up.</li></ul></div>
+<div class="intro"><ul><li>Check that Bluetooth is enabled on your phone.</li></ul></div>
+<div class="intro"><ul><li>Close and reopen the app, then tap Start Scanning again.</li></ul></div>
+<div class="intro"><ul><li>Keep your phone within 1 meter (3 feet) of the sensor during pairing.</li></ul></div>
+<div class="intro"><ul><li>If the sensor still does not appear, contact the study team.</li></ul></div>
+<div class="intro"><p><strong>My device will not connect via Bluetooth.</strong></p></div>
+<div class="intro"><ul><li>Toggle Bluetooth off and back on in your phone settings.</li></ul></div>
+<div class="intro"><ul><li>Restart the app and attempt pairing again.</li></ul></div>
+<div class="intro"><ul><li>Make sure no other devices are interfering nearby.</li></ul></div>
+<div class="intro"><ul><li>If the problem persists, restart your phone and try again.</li></ul></div>
+<h2 class="section">Adhesive &amp; Patch Issues</h2>
+<div class="intro"><p><strong>The patch is not sticking.</strong></p></div>
+<div class="intro"><ul><li>Clean the skin behind your ear again with an alcohol wipe and allow it to dry fully before reapplying.</li></ul></div>
+<div class="intro"><ul><li>When applying, press firmly with two fingers for a full 30 seconds.</li></ul></div>
+<div class="intro"><ul><li>If adhesion is still poor, apply a new patch.</li></ul></div>
+<div class="intro"><ul><li>Contact the study team if you need replacement patches.</li></ul></div>
+<div class="intro"><p><strong>The sensor pod snapped off the patch.</strong></p></div>
+<div class="intro"><p>Re-snap the sensor pod onto the patch — the magnets will click into place. If the patch itself has detached from your skin, apply a new patch before reattaching the sensor.</p></div>
+<h2 class="section">Damage &amp; Skin Reactions</h2>
+<div class="intro"><p><strong>I am experiencing skin irritation under the patch.</strong></p></div>
+<div class="intro"><ul><li>Please submit a symptom report in the SynchNeuro app</li></ul></div>
+<div class="intro"><ul><li>Remove the patch immediately.</li></ul></div>
+<div class="intro"><ul><li>Clean the affected area gently with mild soap and water.</li></ul></div>
+<div class="intro"><ul><li>Do not reapply a new patch until the irritation has fully resolved.</li></ul></div>
+<div class="intro"><ul><li>If symptoms persist, consult a healthcare professional.</li></ul></div>
+  </div>
+  <p class="nores" id="nores">No results found.</p>
+</div>
+<script>
+  var content = document.getElementById('content');
+  var items = Array.prototype.slice.call(content.querySelectorAll('.qa'));
+  var search = document.getElementById('q');
+  var nores = document.getElementById('nores');
+  var toggleAll = document.getElementById('toggleAll');
+
+  content.addEventListener('click', function (e) {
+    var btn = e.target.closest('.q'); if (!btn) return;
+    var qa = btn.parentElement;
+    var open = qa.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  toggleAll.addEventListener('click', function () {
+    var anyClosed = items.some(function (i) { return !i.classList.contains('open') && i.style.display !== 'none'; });
+    items.forEach(function (i) {
+      if (i.style.display === 'none') return;
+      i.classList.toggle('open', anyClosed);
+      i.querySelector('.q').setAttribute('aria-expanded', anyClosed ? 'true' : 'false');
+    });
+    toggleAll.textContent = anyClosed ? 'Collapse all' : 'Expand all';
+  });
+
+  search.addEventListener('input', function () {
+    var term = search.value.trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function (i) {
+      var match = !term || i.textContent.toLowerCase().indexOf(term) !== -1;
+      i.style.display = match ? '' : 'none';
+      if (match && term) { i.classList.add('open'); i.querySelector('.q').setAttribute('aria-expanded', 'true'); }
+      if (match) shown++;
+    });
+    // hide section headers with no visible items
+    Array.prototype.slice.call(content.querySelectorAll('h2.section')).forEach(function (h) {
+      var any = false, n = h.nextElementSibling;
+      while (n && !(n.tagName === 'H2')) { if (n.classList.contains('qa') && n.style.display !== 'none') any = true; n = n.nextElementSibling; }
+      h.style.display = (term && !any) ? 'none' : '';
+    });
+    nores.style.display = (term && shown === 0) ? 'block' : 'none';
+  });
+</script>
+</body>
+</html>
