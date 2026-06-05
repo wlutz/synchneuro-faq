@@ -88,6 +88,16 @@
     });
     nores.style.display = (term && shown === 0) ? 'block' : 'none';
   });
+
+  // Deep-link: a "#q=<term>" fragment (used by the in-app FAQ search field) pre-fills the
+  // search box and filters on load.
+  (function () {
+    var m = location.hash.match(/[#&]q=([^&]*)/);
+    if (m && m[1]) {
+      search.value = decodeURIComponent(m[1].replace(/\+/g, ' '));
+      search.dispatchEvent(new Event('input'));
+    }
+  })();
 </script>
 </body>
 </html>
