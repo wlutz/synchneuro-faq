@@ -22,7 +22,11 @@ SENSORS = [
     # (markdown path,                              out file,                    page title)
     ("Stelo_CGM/Stelo_CGM.md",                     "stelo-cgm.html",            "Stelo CGM"),
     ("Polar_Verity_Sense/Polar_Verity_Sense.md",   "polar-verity-sense.html",   "Polar Verity Sense"),
-    ("EEG_Sensor/EEG_Sensor.md",                   "eeg-sensor.html",           "EEG Sensor"),
+    # "Brain Sensor" is the participant-facing name of the SN-EEG headband (renamed app-wide
+    # 2026-08-05). The app's nav above this page reads "BRAIN SENSOR FAQ", so the page header has
+    # to agree. The output filename and the app's FaqSensor.Eeg key stay `eeg` — no participant
+    # sees either, and changing them would break the app's URL.
+    ("EEG_Sensor/EEG_Sensor.md",                   "eeg-sensor.html",           "Brain Sensor"),
 ]
 
 IMG_DEF = re.compile(r"^\[(image\d+)\]:\s*<?(data:[^>\s]+)>?\s*$")
