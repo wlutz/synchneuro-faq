@@ -23,9 +23,10 @@ SENSORS = [
     ("Stelo_CGM/Stelo_CGM.md",                     "stelo-cgm.html",            "Stelo CGM"),
     ("Polar_Verity_Sense/Polar_Verity_Sense.md",   "polar-verity-sense.html",   "Polar Verity Sense"),
     # "Brain Sensor" is the participant-facing name of the SN-EEG headband (renamed app-wide
-    # 2026-08-05). The app's nav above this page reads "BRAIN SENSOR FAQ", so the page header has
-    # to agree. The output filename and the app's FaqSensor.Eeg key stay `eeg` — no participant
-    # sees either, and changing them would break the app's URL.
+    # 2026-08-05). The title now feeds only the browser <title> — the in-page blue header was
+    # removed 2026-08-11 (designer: the app's own nav above the WebView already says
+    # "BRAIN SENSOR FAQ", so it duplicated). The output filename and the app's FaqSensor.Eeg key
+    # stay `eeg` — no participant sees either, and changing them would break the app's URL.
     ("EEG_Sensor/EEG_Sensor.md",                   "eeg-sensor.html",           "Brain Sensor"),
 ]
 
@@ -163,11 +164,8 @@ PAGE = """<!DOCTYPE html>
   * { box-sizing:border-box; }
   body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
          color:var(--ink); background:#fff; line-height:1.55; -webkit-text-size-adjust:100%; }
-  header { background:var(--blue); color:#fff; padding:18px 16px; position:sticky; top:0; z-index:5; }
-  header h1 { margin:0; font-size:20px; font-weight:700; }
-  header p { margin:4px 0 0; font-size:13px; opacity:.85; }
   .wrap { max-width:760px; margin:0 auto; padding:0 16px 48px; }
-  .searchbar { position:sticky; top:60px; z-index:4; background:#fff; padding:12px 0 6px; }
+  .searchbar { position:sticky; top:0; z-index:4; background:#fff; padding:12px 0 6px; }
   .searchbar input { width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
                      border-radius:12px; background:var(--bg); }
   .tools { display:flex; justify-content:flex-end; padding:4px 0 8px; }
@@ -192,7 +190,8 @@ PAGE = """<!DOCTYPE html>
 </style>
 </head>
 <body>
-<header><h1>__TITLE__</h1><p>FAQ &amp; Troubleshooting</p></header>
+<!-- No page header: the app draws its own nav ("BRAIN SENSOR FAQ" etc.) above this WebView, so
+     the blue in-page title read as a duplicate. Removed at the designer's request, 2026-08-11. -->
 <div class="wrap">
   <div class="searchbar"><input id="q" type="search" placeholder="Search help articles…" aria-label="Search"></div>
   <div class="tools"><button id="toggleAll" type="button">Expand all</button></div>
