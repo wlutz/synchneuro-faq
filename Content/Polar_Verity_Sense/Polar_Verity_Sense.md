@@ -1,77 +1,48 @@
 **POLAR VERITY SENSE OPTICAL HEART RATE SENSOR**
 
-# **Device Setup & Onboarding**
+# **Sensor Setup & Onboarding**
 
 ### **How does the Polar Verity Sense connect to the SynchNeuro app?**
 
-Before your first use, we recommend charging the sensor fully. If the battery is completely empty, it may take a few minutes for charging to begin.The Polar Verity Sense uses Bluetooth to send heart rate data to your smartphone. You will pair it with the SynchNeuro app during your study onboarding. To pair:
+The Polar Verity Sense uses Bluetooth to send heart rate data to your smartphone. You will pair it with the SynchNeuro app during your study onboarding. Once you've paired it during setup, it reconnects automatically over Bluetooth each time you put it on — you shouldn't need to rescan. If the connection indicator shows it's not connected, check in this order:
 
-- Make sure Bluetooth is turned on on your phone.  
-- Follow the pairing instructions in the SynchNeuro app.
+1\. Is the sensor charged and on? Press the button — you should see a green light next to the heart icon.
 
-Once paired, the app will display your sensor as connected.
+2\. Is Bluetooth on? Check your phone's Bluetooth settings, and make sure the sensor is within about 3 feet of your phone.
 
-## **How does the Polar Verity Sense connect to the Polar Flow app?**
+3\. Is it connected somewhere else? The sensor can only stay actively connected to one app at a time. If Polar Flow, Polar Beat, or another app has it open, close that app or disconnect it there first.
 
-The Polar Verity Sense uses Bluetooth to stream heart rate data to your smartphone. You can optionally use the Polar Flow app to view your heart rate and other data from the Polar Verity Sense sensor:
+4\. Still not reconnecting? Open SynchNeuro, go to the Heart Rate Monitor setup screen, and tap Start Scanning to re-pair.
 
-* Download the Polar Flow app from the App Store or Google Play.
+If it still won't reconnect after that, message the study team and we'll help sort it out. 
 
-* Make sure Bluetooth is turned on on your phone.
+### **Where can I find my Polar Verity Sense’s serial number?**
 
-* Put on the sensor so it is in contact with your skin — it will not transmit if not worn.
-
-* Follow the pairing instructions in the Polar Flow app.
-
-Once paired, the app will display the Verity Sense as connected. You can find your sensor’s device ID in the Devices menu within the Polar Flow app, or printed directly on the sensor.
-
-## **What operating modes does the Polar Verity Sense have with the Polar Flow app?**
-
-The Verity Sense supports three operating modes:
-
-* Heart rate mode: Streams heart rate in real time via Bluetooth and ANT+ to a compatible app or device.
-
-* Recording mode: Stores training sessions in the sensor’s internal memory (up to 600 hours), which can be synced to the Polar Flow app later.
-
-* Swimming mode: Automatically records heart rate, distance, and pace during pool swimming sessions using an integrated gyroscope to detect turns.
-
-## **Where can I find my Polar Verity Sense’s serial number?**
-
-The serial number and device ID are printed on the sensor itself. You can also find the device ID in the Devices menu of the Polar Flow app, or in the Products menu of the Polar Flow web service.
+The serial number and sensor ID are printed on the sensor itself.
 
 ![][image1]
 
 ![][image2]
 
-## **Can I use the Polar Verity Sense with multiple devices simultaneously?**
-
-Yes. The Verity Sense can stream heart rate simultaneously to up to two different Bluetooth devices. It is also compatible with ANT+ devices. The sensor works with dozens of leading fitness apps in addition to Polar Flow, including any app that supports standard Bluetooth heart rate profiles.
-
-# **Wearing the Device**
+# **Wearing the Sensor**
 
 ## **How do I wear the Polar Verity Sense?**
 
 The Verity Sense is an optical sensor worn on the arm or temple. Wearing it correctly is essential for accurate readings.
 
-For general use on the arm (forearm or upper arm):
+For general use:
 
-* Wear the sensor snugly on your forearm or upper arm — not on your wrist.
+* Wear the sensor snugly on your upper arm.
 
 * The sensor lens must be in firm, constant contact with your skin. Movement between the sensor and skin will reduce accuracy.
 
 * The armband should feel secure but not uncomfortably tight.
 
-For pool swimming:
-
-* Attach the Verity Sense to your swimming goggle strap using the included swimming goggle strap clip.
-
-* Position the sensor against your temple, as far toward the hairline as possible, without getting hair between the sensor and your skin.
-
 ***Note:** Tattoos on the skin beneath the sensor can interfere with the optical reading. If possible, avoid placing the sensor directly on tattooed areas.*
 
 ## **Can I wear the Polar Verity Sense on my wrist?**
 
-No. For heart rate measurement, the Verity Sense is intended to be worn on the forearm or upper arm, not the wrist. In swimming mode, it is worn against the temple via the goggle strap clip.
+No. For heart rate measurement, the Verity Sense is intended to be worn on the upper arm, not the wrist.
 
 **Do I wear the Polar Verity Sense while sleeping?**
 
@@ -81,7 +52,7 @@ Yes. The Polar Verity Sense is intended to be worn continuously throughout the d
 
 Some people may experience skin irritation from the sensor or armband materials. If you notice a rash, redness, or significant discomfort:
 
-* Stop wearing the sensor, and please submit a symptom report under the *Report a Symptom* option in the SynchNeuro app. 
+* Stop wearing the sensor, and please submit a symptom report in the *need help* section of the SynchNeuro app. 
 
 * Consult your physician if you have a known allergy to any of the sensor’s materials. Material details are available in the Polar Verity Sense User Manual.
 
@@ -103,19 +74,7 @@ The battery provides up to 20 hours of use on a full charge.
 
 ## **How do I know if the battery needs charging?**
 
-Signs that the battery may be running low include:
-
-* The app is not showing a heart rate reading.
-
-* Heart rate readings appear abnormal or stop updating.
-
-* The sensor disconnects from the app more easily than usual.
-
-You can also check the current battery level in the Devices menu of the Polar Flow app.
-
-## **What is the lifespan of the rechargeable battery?**
-
-Rechargeable batteries degrade over time, and capacity will gradually decrease with regular use. Battery lifespan depends on factors including how often the device is charged, storage conditions, and usage patterns. For best battery health, avoid storing the device fully discharged for extended periods.
+If the green LED light does not show up on the sensor when you press the side power button, the battery may be dead. You can check the battery life in the *More* section of the SynchNeuro study app. 
 
 # **Maintenance**
 
@@ -155,109 +114,49 @@ Keep in mind:
 
 * After swimming in heavily chlorinated pool water or seawater, rinse the sensor promptly.
 
-* The 50 m rating refers to static water pressure, not actual diving depth. The device is not intended for scuba diving or high-pressure water activities.
+* The 50 m rating refers to static water pressure, not actual diving depth. The sensor is not intended for scuba diving or high-pressure water activities.
 
 # **Troubleshooting**
 
-## **The Polar Flow app isn’t showing my heart rate — what should I do?**
-
-If your heart rate is not appearing in the app, work through these steps:
-
-* Make sure the sensor lens is clean and free of dirt or dried residue.
-
-* Confirm you are wearing the sensor correctly — it must be snug and the lens must be firmly against your skin.
-
-* Ensure Bluetooth is turned on on your phone and that the sensor is paired with the Polar Flow app.
-
-* Keep your phone in front of you (e.g., in a front pocket). Bluetooth does not transmit reliably through the human body.
-
-* Exit the app and restart it, then check if the sensor reconnects.
-
-* If the problem continues, try restarting your phone.
-
-* Check whether the battery needs charging
-
-## **My heart rate readings look wrong — too high, too low, or erratic**
-
-Inaccurate readings from an optical sensor can have several causes:
-
-* Dirty or scratched lens: Clean the sensor and protect the lens from abrasion.
-
-* Loose fit: Tighten the armband so the sensor stays firmly against your skin throughout movement.
-
-* Sensor position: Try repositioning the sensor slightly on your forearm or upper arm.
-
-* Cold conditions: Cold skin reduces blood flow near the surface, making optical readings less reliable. Warm up before starting a session, or wear long sleeves over the sensor to retain warmth.
-
-* Tattoos: Tattooed skin can absorb or scatter the LED light used by the sensor. Reposition the sensor to avoid tattooed areas if possible.
-
-* Low battery: Charge the sensor.
-
-* Phone position: Keep your phone in front of you. Bluetooth does not pass through the body well.
-
-***Note:** The Polar Verity Sense is not designed to detect arrhythmia or irregular heart rhythms. If you have a known arrhythmia, occasional irregular readings may occur.*
-
 ## **The sensor won’t pair with my phone — what should I do?**
 
-If you are having trouble pairing with either the SynchNeuro app or the Polar Flow app:
+If you are having trouble pairing with either the SynchNeuro app:
 
 * Make sure Bluetooth is enabled on your phone.
 
-* Make sure you are wearing the sensor (it needs to be in contact with skin to activate and transmit).
-
-* If the sensor appears in your phone’s Bluetooth device list but won’t connect, remove it from the list and try pairing again.
+* If the sensor appears in your phone’s Bluetooth sensor list but won’t connect, remove it from the list and try pairing again.
 
 * Restart your phone’s Bluetooth and attempt pairing again.
 
-## **Syncing data between the Verity Sense and the Polar Flow app fails**
-
-If your Verity Sense is not syncing with the Polar Flow app:
-
-On iOS:
-
-* Make sure both the app and sensor firmware are up to date. The Flow app will notify you if a firmware update is available.
-
-* Check that Bluetooth is turned on and that the Verity Sense is paired in the app.
-
-* Try closing and restarting the Polar Flow app.
-
-On Android:
-
-* In addition to the steps above, make sure the Polar Flow app has permission to access your phone’s location (required for Bluetooth scanning on Android).
-
-* Check if your phone has any available software updates, as some Android versions have known Bluetooth issues that manufacturers have patched.
-
-## **How do I reset the Polar Verity Sense to factory settings?**
-
-A factory reset can resolve persistent issues that other troubleshooting steps have not fixed. Note that resetting the sensor will erase all stored data, and you will need to set it up again.
-
-To reset the Verity Sense, use the Polar Flow app. Refer to the instructions within the app or the user manual for the exact steps.
-
-***Note:** After a factory reset, any unsynced data stored in the sensor’s memory will be permanently lost. Make sure to sync before resetting if you want to preserve your data.*
-
-## **Does the Polar Verity Sense need a software update?**
-
-Polar periodically releases firmware updates for the Verity Sense that improve performance and fix issues. Firmware updates are performed through the Polar Flow app.
-
-The Flow app will notify you when a firmware update is available.
+* *See How does the Polar Verity Sense connect to the SynchNeuro app? for more details.* 
 
 # **Connectivity**
 
 ## **How far does the Polar Verity Sense Bluetooth signal reach?**
 
-The Verity Sense transmits heart rate via both Bluetooth and ANT+. In open, unobstructed conditions, Bluetooth range is typically several meters. Walls, the human body, and other wireless devices can all reduce this range.
+The Verity Sense transmits heart rate via both Bluetooth. In open, unobstructed conditions, Bluetooth range is typically several meters. Walls, the human body, and other wireless sensors can all reduce this range.
 
 For best results, keep your phone within a few meters of your body and in a front pocket or accessible location.
 
-## **What is ANT+, and does the Polar Verity Sense support it?**
+## **What if my Polar Verity Sense disconnects from the SynchNeuro app?**
 
-ANT+ is a wireless transmission protocol similar to Bluetooth but does not require pairing — any compatible ANT+ receiver nearby can pick up the signal. The Verity Sense supports both Bluetooth and ANT+, making it compatible with a wide range of fitness apps and training devices, including GPS watches and cycling computers.
+Once you've paired the sensor during setup, it reconnects automatically over Bluetooth each time you put it on, you shouldn't need to rescan. If the connection indicator shows it's not connected, check in this order:
+
+1. Is the sensor charged and on? Press the button, you should see a green light next to the heart icon.
+
+2. Is Bluetooth on? Check your phone's Bluetooth settings, and make sure the sensor is within about 3 feet of your phone.
+
+3. Is it connected somewhere else? The sensor can only stay actively connected to one app at a time. If Polar Flow, Polar Beat, or another app has it open, close that app or disconnect it there first.
+
+4. Still not reconnecting? Open SynchNeuro, go to the Heart Rate Monitor setup screen, and tap Start Scanning to re-pair.
+
+If it still won't reconnect after that, message the study team and we'll help sort it out. 
 
 # **Health & Safety**
 
 ## **Is the Polar Verity Sense safe for me to use?**
 
-The Polar Verity Sense is a consumer optical heart rate sensor suitable for most adults. As with any activity monitoring device, there are a few things to be aware of:
+The Polar Verity Sense is a consumer optical heart rate sensor suitable for most adults. As with any activity monitoring sensor, there are a few things to be aware of:
 
 * Physical activity involves some inherent risk. If you have any health concerns (such as high blood pressure, a history of heart or breathing problems, or if you are pregnant), speak with your healthcare provider before participating in any physical activity during the study.
 
@@ -265,19 +164,19 @@ The Polar Verity Sense is a consumer optical heart rate sensor suitable for most
 
 * If you feel unexpected pain or excessive fatigue while exercising with the Verity Sense, stop the activity and rest.
 
-* If you experience any unusual symptoms while using the sensor, please report your symptom(s) in the SynchNeuro app. 
+* If you experience any unusual symptoms while using the sensor, please report your symptom(s) in the need *help section* of the SynchNeuro app. 
 
-## **I have a pacemaker or implanted electronic device — can I use the Polar Verity Sense?**
+## **I have a pacemaker or implanted electronic sensor — can I use the Polar Verity Sense?**
 
-People using pacemakers or other implanted electronic devices can generally use Polar products. No reports of interference have been documented in practice. However, because many different types of implanted devices exist, Polar cannot provide an official guarantee of compatibility for all devices.
+People using pacemakers or other implanted electronic sensors can generally use Polar products. No reports of interference have been documented in practice. However, because many different types of implanted sensors exist, Polar cannot provide an official guarantee of compatibility for all sensors.
 
-If you have any concerns, please consult your physician or the manufacturer of your implanted device before using the Polar Verity Sense in the study.
+If you have any concerns, please consult your physician or the manufacturer of your implanted sensor before using the Polar Verity Sense in the study.
 
 ## **Battery safety**
 
 The Polar Verity Sense contains a built-in rechargeable lithium battery. If you experience any issues with the battery or charging, please submit a sensor issue in the SynchNeuro app.
 
-Do not expose the sensor to extreme temperatures, direct sunlight for prolonged periods, or attempt to disassemble it. If the device is physically damaged, stop using it and submit a sensor issue report in the SynchNeuro app.
+Do not expose the sensor to extreme temperatures, direct sunlight for prolonged periods, or attempt to disassemble it. If the sensor is physically damaged, stop using it and submit a sensor issue report in the *need help* section of the SynchNeuro app.
 
 [image1]: <data:image/png;base64,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OqJri64rG9avj/+/rje67uj6o+uQrkf2GtVraG4kTQ9w4sQJxiIB+J8Bjbpj0sVHAxX7ufMiiH5Dd+3pZKmM5J0geg1d93T902ujaEEC0JWefFKr05sbNkTP/eK5vrrsCKJokCwRdYQGcj+/cGG0cePGuPWIMZkABqaX+mqMki4sGlOi10iU0dRNECRLRMjQdUrXq6VLl8bXL13HdD2z1zgACEZPhGjQ+JEjR+KnS7Zs2RLPT6JxKBpboHEEap1S/78qRT15oqZugkhCg27TyZKeNrLLEIRC8x7pOqL/1XVF1xeFrje67uj6o+vQ4cOH46403gsIABgKPA0HAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEAADgQbIEoE3+P7Se5Ib/Pr9kAAAAAElFTkSuQmCC>
 
