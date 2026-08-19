@@ -2,9 +2,17 @@
 """Convert the sensor FAQ markdown into self-contained, mobile-friendly HTML pages
 (collapsible Q&A accordion + in-page search), images inlined. Output -> ./html/.
 
-Classification rule (robust to the inconsistent heading levels across the 3 files):
-  - a heading (#..) OR a standalone **bold** line whose text ends with '?'  -> QUESTION (accordion)
-  - a heading whose text does NOT end with '?'                              -> SECTION header
+Classification rule:
+  - a heading at or below that file's ITEM_LEVEL, or any heading ending '?'  -> QUESTION (accordion)
+  - a standalone **bold** line (not a warning callout)                       -> QUESTION (accordion)
+  - a shallower heading                                                      -> SECTION header
+
+  The '?' test used to be the WHOLE rule, on the reasoning that heading levels are inconsistent
+  between the three files. They are inconsistent BETWEEN files but consistent WITHIN each, and the
+  '?' test silently mis-filed every item phrased as a statement — "The sensor snapped off the
+  patch.", "I am getting a 'Signal Loss' alert", "Battery safety" — as section headers, which
+  render permanently expanded. That is the bug participants reported as "some questions at the
+  bottom have all their content showing" (2026-08-19). 17 items across the three pages.
   - a **bold** line containing the warning glyph                            -> warning callout (body)
   - everything else                                                         -> body (paragraph / bullet / image)
 """
@@ -18,16 +26,21 @@ CONTENT = os.path.join(HERE, "Content")
 # from main/root, so the live URLs are https://wlutz.github.io/synchneuro-faq/<page>.html.
 OUT = HERE
 
+# Heading depth at which a file's ACCORDION ITEMS start; anything shallower is a section header.
+# Per file because the three documents nest differently and always have:
+#   Stelo  "#" title, "##" sections, "###" items
+#   Polar  "#" sections, "##"/"###" items
+#   EEG    "#"/"##" sections, items are standalone **bold** lines (no heading at all) -> None
 SENSORS = [
-    # (markdown path,                              out file,                    page title)
-    ("Stelo_CGM/Stelo_CGM.md",                     "stelo-cgm.html",            "Stelo CGM"),
-    ("Polar_Verity_Sense/Polar_Verity_Sense.md",   "polar-verity-sense.html",   "Polar Verity Sense"),
+    # (markdown path,                              out file,                    page title,  item level)
+    ("Stelo_CGM/Stelo_CGM.md",                     "stelo-cgm.html",            "Stelo CGM", 3),
+    ("Polar_Verity_Sense/Polar_Verity_Sense.md",   "polar-verity-sense.html",   "Polar Verity Sense", 2),
     # "Brain Sensor" is the participant-facing name of the SN-EEG headband (renamed app-wide
     # 2026-08-05). The title now feeds only the browser <title> — the in-page blue header was
     # removed 2026-08-11 (designer: the app's own nav above the WebView already says
     # "BRAIN SENSOR FAQ", so it duplicated). The output filename and the app's FaqSensor.Eeg key
     # stay `eeg` — no participant sees either, and changing them would break the app's URL.
-    ("EEG_Sensor/EEG_Sensor.md",                   "eeg-sensor.html",           "Brain Sensor"),
+    ("EEG_Sensor/EEG_Sensor.md",                   "eeg-sensor.html",           "Brain Sensor", None),
 ]
 
 IMG_DEF = re.compile(r"^\[(image\d+)\]:\s*<?(data:[^>\s]+)>?\s*$")
@@ -60,7 +73,7 @@ def inline(text, images):
     return text
 
 
-def parse(md_lines, images):
+def parse(md_lines, images, item_level=None):
     """Return list of sections: {title, intro:[html], items:[{q, body:[html]}]}."""
     sections = []
     cur_section = None
@@ -97,8 +110,16 @@ def parse(md_lines, images):
         is_heading = h is not None
         text = strip_bold(h.group(2)) if is_heading else (b.group(1).strip() if b else stripped)
 
-        is_question = (is_heading or b is not None) and text.rstrip().endswith("?")
         is_warning = (b is not None) and (WARN in text)
+        # A standalone bold line is always an item — these documents use bold-on-its-own as the
+        # Q&A prompt, and many prompts are statements rather than questions. Warning callouts are
+        # also bold-only, so they are excluded first.
+        bold_item = b is not None and not is_warning
+        heading_item = is_heading and (
+            text.rstrip().endswith("?")
+            or (item_level is not None and len(h.group(1)) >= item_level)
+        )
+        is_question = bold_item or heading_item
         is_section = is_heading and not is_question
 
         if is_question:
@@ -288,7 +309,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     index_links = []
     search_groups = []  # (sensor_title, [all Q&A items]) for the combined search page
-    for rel, outfile, title in SENSORS:
+    for rel, outfile, title, item_level in SENSORS:
         with open(os.path.join(CONTENT, rel), encoding="utf-8") as f:
             lines = f.readlines()
         images = {}
@@ -299,7 +320,7 @@ def main():
                 images[m.group(1)] = m.group(2)
             else:
                 body_lines.append(ln)
-        sections = parse(body_lines, images)
+        sections = parse(body_lines, images, item_level)
         content = render(title, sections)
         page = PAGE.replace("__TITLE__", html.escape(title)).replace("__CONTENT__", content)
         with open(os.path.join(OUT, outfile), "w", encoding="utf-8") as f:
